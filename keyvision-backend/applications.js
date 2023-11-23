@@ -7,4 +7,5 @@ function getApplications() {
     ];
 }
 
+
 module.exports = getApplications;
