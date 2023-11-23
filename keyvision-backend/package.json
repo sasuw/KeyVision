@@ -1,0 +1,19 @@
+{
+  "name": "keyvision-backend",
+  "version": "0.1.0",
+  "description": "Backend for Keyvision",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.7p-group.com/amr/hackathon/keyvision"
+  },
+  "author": "Sasu, Simon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "keycode-js": "^3.1.0"
+  }
+}
