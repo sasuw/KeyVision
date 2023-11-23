@@ -1,0 +1,162 @@
+[
+  [
+    { "label": "Esc", "keyCode": 27},
+    {
+      "width": 1
+    },
+    { "label": "F1","keyCode": 27},
+    { "label": "F2","keyCode": 27},
+    { "label": "F3","keyCode": 27},
+    { "label": "F4","keyCode": 27},
+    {
+      "width": 0.5
+    },
+    { "label": "F5","keyCode": 27},
+    { "label": "F6","keyCode": 27},
+    { "label": "F7","keyCode": 27},
+    { "label": "F8","keyCode": 27},
+    {
+      "width": 0.5
+    },
+    { "label": "F9","keyCode": 27},
+    { "label": "F10","keyCode": 27},
+    { "label": "F11","keyCode": 27},
+    { "label": "F12","keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "PrtSc", "keyCode": 27},
+    { "label": "Scroll Lock","keyCode": 27},
+    { "label": "Pause\nBreak","keyCode": 27}
+  ],
+  [],
+  [
+    { "label": "¬\n`", "keyCode": 27},
+    { "label": "!\n1", "keyCode": 27},
+    { "label": "\"\n2", "keyCode": 27},
+    { "label": "£\n3", "keyCode": 27},
+    { "label": "$\n4", "keyCode": 27},
+    { "label": "%\n5", "keyCode": 27},
+    { "label": "^\n6", "keyCode": 27},
+    { "label": "&\n7", "keyCode": 27},
+    { "label": "*\n8", "keyCode": 27},
+    { "label": "(\n9", "keyCode": 27},
+    { "label": ")\n0", "keyCode": 27},
+    { "label": "_\n-", "keyCode": 27},
+    { "label": "+\n=", "keyCode": 27},
+    { "label": "Backspace", "width": 2, "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "Insert", "keyCode": 27},
+    { "label": "Home", "keyCode": 27},
+    { "label": "PgUp", "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "Num Lock", "keyCode": 27},
+    { "label": "/", "keyCode": 27},
+    { "label": "*", "keyCode": 27},
+    { "label": "-", "keyCode": 27}
+  ],
+  [
+    { "label": "Tab", "width": 1.5, "keyCode": 27},
+    { "label": "Q", "keyCode": 27},
+    { "label": "W", "keyCode": 27},
+    { "label": "E", "keyCode": 27},
+    { "label": "R", "keyCode": 27},
+    { "label": "T", "keyCode": 27},
+    { "label": "Y", "keyCode": 27},
+    { "label": "U", "keyCode": 27},
+    { "label": "I", "keyCode": 27},
+    { "label": "O", "keyCode": 27},
+    { "label": "P", "keyCode": 27},
+    { "label": "{\n[", "keyCode": 27},
+    { "label": "}\n]", "keyCode": 27},
+    { "label": "Enter", "width": 1.5, "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "Delete", "keyCode": 27},
+    { "label": "End", "keyCode": 27},
+    { "label": "PgDn", "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "7\nHome", "keyCode": 27},
+    { "label": "8\n↑", "keyCode": 27},
+    { "label": "9\nPgUp", "keyCode": 27},
+    { "label": "+", "h": 2, "keyCode": 27}
+  ],
+  [
+    { "label": "Caps Lock", "width": 1.75, "keyCode": 27},
+    { "label": "A", "keyCode": 27},
+    { "label": "S", "keyCode": 27},
+    { "label": "D", "keyCode": 27},
+    { "label": "F", "keyCode": 27},
+    { "label": "G", "keyCode": 27},
+    { "label": "H", "keyCode": 27},
+    { "label": "J", "keyCode": 27},
+    { "label": "K", "keyCode": 27},
+    { "label": "L", "keyCode": 27},
+    { "label": ":\n;", "keyCode": 27},
+    { "label": "@\n'", "keyCode": 27},
+    { "label": "~\n#", "keyCode": 27},
+    { "label": "", "width": 1.25, "keyCode": 27},
+    {
+      "width": 3.5
+    },
+    { "label": "4\n←", "keyCode": 27},
+    { "label": "5", "keyCode": 27},
+    { "label": "6\n→", "keyCode": 27},
+    { "label": "", "h": 2, "keyCode": 27}
+  ],
+  [
+    { "label": "Shift", "width": 1.25, "keyCode": 27},
+    { "label": "|\n\\", "keyCode": 27},
+    { "label": "Z", "keyCode": 27},
+    { "label": "width", "keyCode": 27},
+    { "label": "C", "keyCode": 27},
+    { "label": "V", "keyCode": 27},
+    { "label": "B", "keyCode": 27},
+    { "label": "N", "keyCode": 27},
+    { "label": "M", "keyCode": 27},
+    { "label": "<\n,", "keyCode": 27},
+    { "label": ">\n.", "keyCode": 27},
+    { "label": "?\n/", "keyCode": 27},
+    { "label": "Shift", "width": 2.75, "keyCode": 27},
+    {
+      "width": 1.25
+    },
+  { "label": "↑", "keyCode": 27},
+    {
+      "width": 1.25
+    },
+    { "label": "1\nEnd", "keyCode": 27},
+    { "label": "2\n↓", "keyCode": 27},
+    { "label": "3\nPgDn", "keyCode": 27},
+    { "label": "Enter", "h": 2, "keyCode": 27}
+  ],
+  [
+    { "label": "Ctrl", "width": 1.25, "keyCode": 27},
+    { "label": "Win", "width": 1.25, "keyCode": 27},
+    { "label": "Alt", "width": 1.25, "keyCode": 27},
+    { "label": "", "width": 6.25, "keyCode": 27},
+    { "label": "AltGr", "width": 1.25, "keyCode": 27},
+    { "label": "Win", "width": 1.25, "keyCode": 27},
+    { "label": "Menu", "width": 1.25, "keyCode": 27},
+    { "label": "Ctrl", "width": 1.25, "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "←", "keyCode": 27},
+    { "label": "↓", "keyCode": 27},
+    { "label": "→", "keyCode": 27},
+    {
+      "width": 0.25
+    },
+    { "label": "0\nIns", "width": 2, "keyCode": 27},
+    { "label": ".\nDel", "keyCode": 27},
+    { "label": "", "h": 2, "keyCode": 27}
+  ]
+]
