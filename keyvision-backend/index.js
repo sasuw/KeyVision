@@ -85,6 +85,7 @@ app.get('/applications/shortcuts/:appName', (req, res) => {
     res.json(getShortcuts(appName));
 });
 
+app.use('/jsdoc', express.static(__dirname + '/public/jsdoc'));
 
 const options = {
     definition: {
