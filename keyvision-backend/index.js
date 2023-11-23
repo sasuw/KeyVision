@@ -9,54 +9,82 @@ const getApplications = require('./applications');
 const getShortcuts = require('./shortcuts');
 
 /**
- * Route serving a health check.
- * @name get/alive
- * @function
- * @memberof module:Express
- * @inner
- * @returns {string} - Confirmation that the server is running.
+ * @openapi
+ * /alive:
+ *   get:
+ *     description: Health check route to confirm the server is running.
+ *     responses:
+ *       200:
+ *         description: Confirmation that the server is running.
  */
 app.get('/alive', (req, res) => {
     res.send('Server is up and running!');
 });
 
 /**
- * Route serving the API version.
- * @name get/version
- * @function
- * @memberof module:Express
- * @inner
- * @returns {string} - The current version of the API.
+ * @openapi
+ * /version:
+ *   get:
+ *     description: Provides the current version of the API.
+ *     responses:
+ *       200:
+ *         description: Returns the current API version.
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: string
  */
 app.get('/version', (req, res) => {
     res.send('API Version: 0.1.0');
 });
 
 /**
- * Route serving a list of applications.
- * @name get/applications
- * @function
- * @memberof module:Express
- * @inner
- * @returns {Object[]} - An array of application objects.
+ * @openapi
+ * /applications:
+ *   get:
+ *     description: Retrieves a list of applications.
+ *     responses:
+ *       200:
+ *         description: Returns an array of application objects.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
  */
 app.get('/applications', (req, res) => {
     res.json(getApplications());
 });
 
+
 /**
- * Route serving shortcuts for a specific application.
- * @name get/applications/shortcuts/:appName
- * @function
- * @memberof module:Express
- * @inner
- * @param {string} appName - The name of the application.
- * @returns {Object[]} - An array of shortcut objects for the given application.
+ * @openapi
+ * /applications/shortcuts/{appName}:
+ *   get:
+ *     description: Retrieves shortcuts for a specified application.
+ *     parameters:
+ *       - in: path
+ *         name: appName
+ *         required: true
+ *         description: The name of the application.
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Returns an array of shortcut objects for the given application.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
  */
 app.get('/applications/shortcuts/:appName', (req, res) => {
     const appName = req.params.appName;
     res.json(getShortcuts(appName));
 });
+
 
 const options = {
     definition: {
@@ -82,7 +110,7 @@ const options = {
             },
         ],
     },
-    apis: ["./routes/*.js"],
+    apis: ['./index.js']
 };
 
 const specs = swaggerJsdoc(options);
