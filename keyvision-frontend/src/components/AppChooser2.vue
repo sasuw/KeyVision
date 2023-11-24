@@ -14,7 +14,7 @@ defineProps( {
 <template>
 
   <v-combobox label="Select Application"
-              :items="apps" :item-title="name" :item-value="name">
+              :items="apps" :item-title="displayName" :item-value="name">
 
   </v-combobox>
 </template>

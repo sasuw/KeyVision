@@ -1,14 +1,21 @@
 <script setup>
 import Keyboard from "@/components/Keyboard.vue";
 import Shortcuts from "@/components/Shortcuts.vue";
+import { onMounted, ref } from 'vue';
+
+const apps = ref([]);
+
+onMounted(async () => {
+  const response = await fetch('http://localhost:3000/applications');
+  apps.value = await response.json();
+});
 
 const appsBla = [
   { "name": "ExampleApp"},
   { "name": "CS:GO"},
 ]
 
-// const response = await fetch('http://localhost:3000/applications');
-// const apps = await response.json();
+
 let appName;
 </script>
 
@@ -26,8 +33,8 @@ let appName;
         <v-card-title><h3>Import Application</h3></v-card-title>
         <v-card-item>
           <Suspense>
-            <v-combobox label="Select Application" v-model="appName"
-                        :items="apps" :item-title="name" :item-value="name">
+            <v-combobox  v-if="apps && apps.length > 0" label="Select Application" v-model="appName"
+                        :items="apps" :item-title="displayName" :item-value="name">
             </v-combobox>
           </Suspense>
         </v-card-item>
