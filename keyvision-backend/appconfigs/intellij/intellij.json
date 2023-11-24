@@ -1,0 +1,6 @@
+{
+  "applicationName": "idea",
+  "applicationDisplayName": "IntelliJ IDEA",
+  "configFilePath": "/path/to/intellij/config",
+  "operatingSystem": "macOS"
+}

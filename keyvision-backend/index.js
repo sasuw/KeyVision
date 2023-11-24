@@ -5,8 +5,8 @@ const express = require("express"),
 const app = express();
 const port = 3000;
 
-const getApplications = require('./applications');
-const getShortcuts = require('./shortcuts');
+const { AppConfig, getApplications, appConfigs }  = require('./applications');
+const { Shortcut, getShortcuts } = require('./shortcuts');
 
 /**
  * @openapi
@@ -82,7 +82,20 @@ app.get('/applications', (req, res) => {
  */
 app.get('/applications/shortcuts/:appName', (req, res) => {
     const appName = req.params.appName;
-    res.json(getShortcuts(appName));
+
+    if (appName.toLowerCase() === 'exampleapp'.toLowerCase()) {
+        //TODO remove when real app configs ready
+        res.json(getShortcuts(appName));
+        return;
+    }
+    if (appName.toLowerCase() !== 'cs16'){
+        res.status(404).send(`No application with name ${appName} found`);
+        return;
+    }
+    let counterStrikeConfig = appConfigs[0];
+    res.json(counterStrikeConfig.getShortcuts());
+
+
 });
 
 app.use('/jsdoc', express.static(__dirname + '/public/jsdoc'));

@@ -1,0 +1,9 @@
+{
+  "applicationName": "cs16",
+  "applicationDisplayName": "Counter-Strike 1.6",
+  "configFilePath": "~/.local/share/Steam/steamapps/common/Half-Life/cstrike/config.cfg",
+  "type": "valve-source-engine",
+  "keymappings": {
+
+  }
+}

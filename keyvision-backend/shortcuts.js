@@ -16,6 +16,10 @@ class Shortcut {
         this.shortcutType = shortcutType;
         this.keyCodes = keyCodes;
     }
+
+    toString() {
+        return `Shortcut { Name: ${this.name}, DisplayName: ${this.displayName}, Type: ${this.shortcutType}, KeyCodes: [${this.keyCodes.join(', ')}] }`;
+    }
 }
 
 /**
@@ -34,4 +38,7 @@ function getShortcuts(application) {
     return [];
 }
 
-module.exports = getShortcuts;
+module.exports = {
+    Shortcut,
+    getShortcuts
+};
