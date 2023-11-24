@@ -20,11 +20,11 @@ const keyWidth = 54;
 
 <template>
   <div v-if="keyCode != null" class="keyBorder" :style="{'width': keyWidth * width + 'px'}">
-    <div class="keyTop" :style="{'width': keyWidth * width + 'px'}">
+    <div class="keyTop" :style="{'width': (keyWidth * width) -12 + 'px'}">
       <span class="keyLabel">{{label}}</span>
     </div>
   </div>
-  <div v-else class="keyBorder" :style="{'width': keyWidth * width + 'px'}">
+  <div v-else class="keyBorder" :style="{'width': keyWidth * width + 'px'}" style="background-color: #dddddd">
 
   </div>
 
@@ -35,7 +35,7 @@ const keyWidth = 54;
     height: 54px;
     background-color: #ccc;
     border-width: 1px;
-    border-radius: 0px;
+    border-radius: 2px;
     padding: 3px 6px;
   }
 
@@ -44,6 +44,7 @@ const keyWidth = 54;
     height: 42px;
     line-height: 1em;
     background-color: #fcfcfc;
+    border-radius: 2px;
     padding: 3px;
   }
 

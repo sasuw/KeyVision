@@ -26,8 +26,8 @@ defineProps({
 
 .keyboard {
   background-color: #ddd;
-  height: 361px;
-  width: 1255px;
+  height: 351px;
+  width: 1235px;
   border-radius: 6px;
   padding: 9px;
 }
