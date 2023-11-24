@@ -2,8 +2,14 @@ const express = require("express"),
     bodyParser = require("body-parser"),
     swaggerJsdoc = require("swagger-jsdoc"),
     swaggerUi = require("swagger-ui-express");
+const cors = require('cors');
 const app = express();
+
 const port = 3000;
+
+// CORS configuration
+// This allows all origins. For production, you might want to restrict it to certain domains.
+app.use(cors());
 
 const { AppConfig, getApplications, appConfigs }  = require('./applications');
 const { Shortcut, getShortcuts } = require('./shortcuts');
