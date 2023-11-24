@@ -1,14 +1,16 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { watch, onMounted, ref } from "vue";
 
 defineProps({
   appName: {
     required: true,
     type: String
-  }
+  },
+  selectedKeyCode: Number
 });
 
 let config = ref({ shortcuts: [] });
+
 
 onMounted(async () => {
   try {
@@ -29,6 +31,22 @@ const headers = [
   { title: 'Action', value: 'displayName' },
   { title: 'Associated keys', value: 'keyCodes' }
 ]
+
+// Method to handle keycode changes
+const handleKeyCodeChange = (newKeyCode) => {
+  if (newKeyCode !== null) {
+    console.log('New keycode received in Shortcuts:', newKeyCode);
+    // Implement your logic here. For example:
+    // - You could filter the shortcuts based on the new keycode.
+    // - You could highlight the shortcut associated with the keycode.
+    // - Any other action you need to perform.
+  }
+
+// Watcher for selectedKeyCode
+  watch(() => props.selectedKeyCode, (newKeyCode) => {
+    handleKeyCodeChange(newKeyCode);
+  });
+}
 </script>
 
 <template>

@@ -5,6 +5,7 @@ import { onMounted, ref } from 'vue';
 import AppChooser2 from "@/components/AppChooser2.vue";
 
 const apps = ref([]);
+let selectedKeyCode = ref(null);
 
 onMounted(async () => {
   const response = await fetch('http://localhost:3000/applications');
@@ -13,12 +14,12 @@ onMounted(async () => {
 
 const handleKeyClicked = (keyCode) => {
   console.log('Key clicked in parent:', keyCode);
-  // Additional logic here
+  selectedKeyCode.value = keyCode;
 };
 
 const handleKeyPressed = (keyCode) => {
   console.log('Key pressed in parent:', keyCode);
-  // Additional logic here
+  selectedKeyCode.value = keyCode;
 };
 
 let appName = ref('');
@@ -56,7 +57,7 @@ let appName = ref('');
         <v-card-title>Hotkeys</v-card-title>
         <v-card-item>
           <Suspense>
-            <Shortcuts ref="shortcuts" app-name="exampleApp"></Shortcuts>
+            <Shortcuts :selected-key-code="selectedKeyCode" ref="shortcuts" app-name="exampleApp"></Shortcuts>
           </Suspense>
         </v-card-item>
       </v-card>
