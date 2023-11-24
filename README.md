@@ -1,5 +1,7 @@
 # KeyVision
 
+[Seven Principles Mobility GmbH](https://github.com/sevenprinciples) Hackathon 2023 Project. Work in progress.
+
 ## Frontend
 
 ## Backend
