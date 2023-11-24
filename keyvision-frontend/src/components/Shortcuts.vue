@@ -23,10 +23,22 @@ onMounted(async () => {
     console.error("Fetch error:", error);
   }
 });
+
+const headers = [
+  { title: 'Type', value: 'shortcutType' },
+  { title: 'Action', value: 'displayName' },
+  { title: 'Associated keys', value: 'keyCodes' }
+]
 </script>
 
 <template>
-  <v-data-table v-if="config.shortcuts && config.shortcuts.length > 0" :items="config.shortcuts" @click="">
+  <v-data-table v-if="config.shortcuts && config.shortcuts.length > 0"
+                :items="config.shortcuts"
+                :headers="headers"
+                select-strategy="single"
+                show-select
+                return-object
+                @click="">
   </v-data-table>
 </template>
 

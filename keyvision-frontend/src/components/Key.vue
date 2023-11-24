@@ -47,7 +47,7 @@ const keyWidth = 54;
     border-radius: 2px;
     padding: 3px;
   }
-  .keyTop :hover :active {
+  .keyTop:hover, .keyTop:active {
     background-color: rgba(68,246,243,0.36);
     cursor: pointer;
   }
