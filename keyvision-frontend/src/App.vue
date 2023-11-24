@@ -2,6 +2,7 @@
 import Keyboard from "@/components/Keyboard.vue";
 import Shortcuts from "@/components/Shortcuts.vue";
 import { onMounted, ref } from 'vue';
+import AppChooser2 from "@/components/AppChooser2.vue";
 
 const apps = ref([]);
 
@@ -10,13 +11,8 @@ onMounted(async () => {
   apps.value = await response.json();
 });
 
-const appsBla = [
-  { "name": "ExampleApp"},
-  { "name": "CS:GO"},
-]
 
-
-let appName;
+let appName = ref('');
 </script>
 
 <template>
@@ -34,7 +30,7 @@ let appName;
         <v-card-item>
           <Suspense>
             <v-combobox  v-if="apps && apps.length > 0" label="Select Application" v-model="appName"
-                        :items="apps" :item-title="displayName" :item-value="name">
+                        :items="apps" item-title="displayName" item-value="name">
             </v-combobox>
           </Suspense>
         </v-card-item>
@@ -43,14 +39,16 @@ let appName;
         <v-card-title><h3>Keyboard</h3></v-card-title>
         <v-card-item>
           <Suspense>
-            <Keyboard name="ISO 105"></Keyboard>
+            <Keyboard ref="keyboard" name="ISO 105"></Keyboard>
           </Suspense>
         </v-card-item>
       </v-card>
       <v-card class="my-2">
         <v-card-title>Hotkeys</v-card-title>
         <v-card-item>
-          <Shortcuts app-name="exampleApp"></Shortcuts>
+          <Suspense>
+            <Shortcuts ref="shortcuts" app-name="exampleApp"></Shortcuts>
+          </Suspense>
         </v-card-item>
       </v-card>
     </v-main>

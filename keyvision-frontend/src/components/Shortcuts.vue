@@ -10,15 +10,16 @@ defineProps( {
 })
 
 let shortcuts = computed(async () => {
-  //todo /config/
-  const response = await fetch('http://localhost:3000/applications/config/' + 'exampleApp');
+  const response = await fetch('http://localhost:3000/applications/config/' + appName);
   return response.json().shortcuts;
 })
 
 </script>
 
 <template>
-  <div>{{shortcuts}}</div>
+  <v-data-table :items="shortcuts.shortcuts" @click="">
+
+  </v-data-table>
 </template>
 
 <style scoped>
