@@ -25,11 +25,3 @@ https://github.com/kabirbaidhya/keycode-js
 https://github.com/ijprest/keyboard-layout-editor
 
 http://www.keyboard-layout-editor.com/
-
-## Sasu's temporary backend server
-
-http://192.168.145.125:3000/applications/
-
-http://192.168.145.125:3000/applications/config/exampleApp
-
-http://192.168.145.125:3000/applications/config/cs16
