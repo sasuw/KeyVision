@@ -60,9 +60,9 @@ app.get('/applications', (req, res) => {
 
 /**
  * @openapi
- * /applications/shortcuts/{appName}:
+ * /applications/config/{appName}:
  *   get:
- *     description: Retrieves shortcuts for a specified application.
+ *     description: Retrieves AppConfig for a specified application.
  *     parameters:
  *       - in: path
  *         name: appName
@@ -72,15 +72,39 @@ app.get('/applications', (req, res) => {
  *           type: string
  *     responses:
  *       200:
- *         description: Returns an array of shortcut objects for the given application.
+ *         description: Returns AppConfig for the given application.
  *         content:
  *           application/json:
  *             schema:
- *               type: array
- *               items:
- *                 type: object
+ *               type: object
+ *               properties:
+ *                 applicationName:
+ *                   type: string
+ *                 applicationDisplayName:
+ *                   type: string
+ *                 shortcuts:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       name:
+ *                         type: string
+ *                       displayName:
+ *                         type: string
+ *                       shortcutType:
+ *                         type: string
+ *                       keyCodes:
+ *                         type: array
+ *                         items:
+ *                           type: string
+ *       404:
+ *         description: No application with the specified name found.
+ *         content:
+ *           text/plain:
+ *             schema:
+ *               type: string
  */
-app.get('/applications/shortcuts/:appName', (req, res) => {
+app.get('/applications/config/:appName', (req, res) => {
     const appName = req.params.appName;
 
     if (appName.toLowerCase() === 'exampleapp'.toLowerCase()) {
@@ -93,9 +117,7 @@ app.get('/applications/shortcuts/:appName', (req, res) => {
         return;
     }
     let counterStrikeConfig = appConfigs[0];
-    res.json(counterStrikeConfig.getShortcuts());
-
-
+    res.json(counterStrikeConfig);
 });
 
 app.use('/jsdoc', express.static(__dirname + '/public/jsdoc'));
