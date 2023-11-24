@@ -57,7 +57,7 @@ let appName = ref('');
         <v-card-title>Hotkeys</v-card-title>
         <v-card-item>
           <Suspense>
-            <Shortcuts :selected-key-code="selectedKeyCode" ref="shortcuts" app-name="exampleApp"></Shortcuts>
+            <Shortcuts :selectedKeyCode="selectedKeyCode" ref="shortcuts" app-name="exampleApp"></Shortcuts>
           </Suspense>
         </v-card-item>
       </v-card>
