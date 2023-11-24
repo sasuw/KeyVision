@@ -6,7 +6,7 @@
 
 ### TLDR
 
-When you call [/applications/shortcuts/{appName}](http://localhost:3000/api-docs/#/default/get_applications_shortcuts__appName_) you get an array of [ShortCut](http://localhost:3000/jsdoc/Shortcut.html) objects.
+When you call [/applications/shortcuts/{appName}](http://localhost:3000/api-docs/#/default/get_applications_shortcuts__appName_) you get an array of [ShortCut](http://localhost:3000/jsdoc/Shortcut.html) objects. Try it out with http://192.168.145.125:3000/applications/shortcuts/exampleApp
 
 ### Docs
 
@@ -21,10 +21,15 @@ Default port is 3000.
 # Links
 
 https://github.com/kabirbaidhya/keycode-js
+
 https://github.com/ijprest/keyboard-layout-editor
+
 http://www.keyboard-layout-editor.com/
 
 ## Sasu's temporary backend server
 
 http://192.168.145.125:3000/applications/
+
 http://192.168.145.125:3000/applications/shortcuts/exampleApp
+
+http://192.168.145.125:3000/applications/shortcuts/cs16
