@@ -11,6 +11,15 @@ onMounted(async () => {
   apps.value = await response.json();
 });
 
+const handleKeyClicked = (keyCode) => {
+  console.log('Key clicked in parent:', keyCode);
+  // Additional logic here
+};
+
+const handleKeyPressed = (keyCode) => {
+  console.log('Key pressed in parent:', keyCode);
+  // Additional logic here
+};
 
 let appName = ref('');
 </script>
@@ -39,7 +48,7 @@ let appName = ref('');
         <v-card-title><h3>Keyboard</h3></v-card-title>
         <v-card-item>
           <Suspense>
-            <Keyboard ref="keyboard" name="ISO 105"></Keyboard>
+            <Keyboard @key-clicked="handleKeyClicked" @key-pressed="handleKeyPressed" ref="keyboard" name="ISO 105"></Keyboard>
           </Suspense>
         </v-card-item>
       </v-card>

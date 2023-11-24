@@ -4,6 +4,7 @@ import Key from "@/components/Key.vue";
 import { ref } from 'vue';
 
 const keyboardData = ref([]);
+const emit = defineEmits(['key-clicked', 'key-pressed']);
 
 onMounted(async () => {
   try {
@@ -32,6 +33,7 @@ defineProps({
 
 const handleKeyClick = (keyCode) => {
   console.log('Key clicked:', keyCode);
+  emit('key-clicked', keyCode);
 };
 
 const handleKeyPress = (event) => {
@@ -39,6 +41,7 @@ const handleKeyPress = (event) => {
     row.forEach(key => {
       if (key.keyCode === event.keyCode) {
         console.log('Key pressed:', key.keyCode);
+        emit('key-pressed', key.keyCode);
       }
     });
   });
