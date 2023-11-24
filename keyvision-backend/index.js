@@ -121,6 +121,7 @@ app.get('/applications/config/:appName', (req, res) => {
 });
 
 app.use('/jsdoc', express.static(__dirname + '/public/jsdoc'));
+app.use('/cs16.json', express.static(__dirname + '/public/cs16.json'));
 
 const options = {
     definition: {
