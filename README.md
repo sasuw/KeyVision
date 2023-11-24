@@ -30,6 +30,6 @@ http://www.keyboard-layout-editor.com/
 
 http://192.168.145.125:3000/applications/
 
-http://192.168.145.125:3000/applications/shortcuts/exampleApp
+http://192.168.145.125:3000/applications/config/exampleApp
 
-http://192.168.145.125:3000/applications/shortcuts/cs16
+http://192.168.145.125:3000/applications/config/cs16

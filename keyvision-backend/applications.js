@@ -32,6 +32,11 @@ class AppConfig {
          * @property {Array} shortcuts - A list of shortcuts associated with the application.
          */
         this.shortcuts = [];
+
+        /**
+         * @property {Object} keymappings - Maps applications keymappings to JS keymappings (first value: application, second value: JS)
+         */
+        this.keymappings = [];
     }
 
     /**
@@ -66,6 +71,8 @@ fs.readdirSync(appConfigsDir).forEach(appDir => {
         const configFilePath = appConfigsFromJson.configFilePath.replace('~', process.env.HOME);
         if (fs.existsSync(configFilePath)) {
             if (fs.existsSync(configFilePath)) {
+                appConfig.keymappings = appConfigsFromJson.keymappings;
+
                 const configFileContent = fs.readFileSync(configFilePath, 'utf8');
                 configFileContent.split('\n').forEach(line => {
                     const match = line.match(/bind "(.*)" "(.*)"/);
