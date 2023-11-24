@@ -27,4 +27,4 @@ http://www.keyboard-layout-editor.com/
 ## Sasu's temporary backend server
 
 http://192.168.145.125:3000/applications/
-http://localhost:3000/applications/shortcuts/exampleApp
+http://192.168.145.125:3000/applications/shortcuts/exampleApp
