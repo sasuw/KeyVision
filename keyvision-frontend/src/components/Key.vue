@@ -7,7 +7,7 @@ defineProps({
   },
   keyCode: {
     type: Number,
-    required: true
+    required: false
   },
   width: {
     type: Number,
@@ -19,7 +19,7 @@ const keyWidth = 54;
 </script>
 
 <template>
-  <div v-if="keyCode != null" class="keyBorder" :style="{'width': keyWidth * width + 'px'}">
+  <div v-if="keyCode !== undefined" class="keyBorder" :style="{'width': keyWidth * width + 'px'}">
     <div class="keyTop" :style="{'width': (keyWidth * width) -12 + 'px'}">
       <span class="keyLabel">{{label}}</span>
     </div>
@@ -46,6 +46,10 @@ const keyWidth = 54;
     background-color: #fcfcfc;
     border-radius: 2px;
     padding: 3px;
+  }
+  .keyTop :hover :active {
+    background-color: rgba(68,246,243,0.36);
+    cursor: pointer;
   }
 
   .keyLabel {
