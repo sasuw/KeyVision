@@ -1,32 +1,34 @@
 <script setup>
+import { onMounted, ref } from "vue";
 
-import {computed, onMounted, ref} from "vue";
-
-defineProps( {
+defineProps({
   appName: {
     required: true,
     type: String
   }
-})
+});
 
-let config = computed( async () => {
+let config = ref({ shortcuts: [] });
 
-  // const response = await fetch('http://localhost:3000/applications/config/' + 'exampleApp');
-  const response = await fetch('http://localhost:3000/cs16.json');
-  const json = await response.json();
-  console.log(json)
-  return json;
-})
-
+onMounted(async () => {
+  try {
+    const response = await fetch('http://localhost:3000/cs16.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const json = await response.json();
+    console.log(json);
+    config.value = json;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+});
 </script>
 
 <template>
-  <div v-if="config">{{config}}</div>
-  <v-data-table v-if="config && config.shortcuts && config.shortcuts.length > 0" :items="config.shortcuts" @click="">
-
+  <v-data-table v-if="config.shortcuts && config.shortcuts.length > 0" :items="config.shortcuts" @click="">
   </v-data-table>
 </template>
 
 <style scoped>
-
 </style>
